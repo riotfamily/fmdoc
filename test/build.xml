@@ -1,0 +1,15 @@
+<project name="fmtest" default="fmdoc">
+
+	<taskdef name="fmdoc" 
+		classname="org.riotfamily.fmdoc.ant.FreeMarkerDocTask" 
+		classpath="../bin:../lib/freemarker.jar" />
+	
+    <target name="fmdoc">
+        <fmdoc destdir="docs">
+        	<fileset dir="src">
+        		<include name="**/*.ftl" />		
+        	</fileset>
+		</fmdoc>
+    </target>
+
+</project>

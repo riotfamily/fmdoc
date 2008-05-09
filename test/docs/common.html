@@ -1,0 +1,1173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>common</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+<body id="template">
+<div class="nav">
+	<a href="overview-summary.html">Overview</a> <a href="index-all.html">Index</a>
+</div>
+<h1>common</h1>
+		<a name="org/riotfamily/website/view/common.ftl"></a>
+		<h3>org/riotfamily/website/view/common.ftl</h3>
+		<div class="description">
+			Provides common utility macros and functions.
+
+		</div>
+
+<table class="summary">
+	<thead>
+		<tr>
+			<th colspan="2">Summary</th>
+		</tr>
+	</thead>
+	<tbody>
+				<tr>
+					<td class="type">Variable</td>
+					<td><a href="#locale">locale</a></td>
+				</tr>
+				<tr>
+					<td class="type">Variable</td>
+					<td><a href="#documentUri">documentUri</a></td>
+				</tr>
+				<tr>
+					<td class="type">Variable</td>
+					<td><a href="#includeUri">includeUri</a></td>
+				</tr>
+				<tr>
+					<td class="type">Variable</td>
+					<td><a href="#topLevelHandlerName">topLevelHandlerName</a></td>
+				</tr>
+				<tr>
+					<td class="type">Variable</td>
+					<td><a href="#templateName">templateName</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#include">include</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#capture">capture</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#setSharedProperty">setSharedProperty</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#getSharedProperty">getSharedProperty</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#url">url</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#resolve">resolve</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#encodeLinks">encodeLinks</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#resource">resource</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#isExternalUrl">isExternalUrl</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#absoluteUrl">absoluteUrl</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#urlForHandler">urlForHandler</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#absoluteUrlForHandler">absoluteUrlForHandler</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#isHandler">isHandler</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#setParameter">setParameter</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#addParameter">addParameter</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#addRequestParameters">addRequestParameters</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#randomItem">randomItem</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#currentTime">currentTime</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#isInFuture">isInFuture</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#partition">partition</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#shuffle">shuffle</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#baseName">baseName</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#fileExtension">fileExtension</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#formatByteSize">formatByteSize</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#formatMillis">formatMillis</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#formatNumber">formatNumber</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#round">round</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#toTitleCase">toTitleCase</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#getMessage">getMessage</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#message">message</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#attribute">attribute</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#if">if</a></td>
+				</tr>
+				<tr>
+					<td class="type">Macro</td>
+					<td><a href="#link">link</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#hyphenate">hyphenate</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#hyphenateAndEncode">hyphenateAndEncode</a></td>
+				</tr>
+				<tr>
+					<td class="type">Function</td>
+					<td><a href="#hyphenatePlainText">hyphenatePlainText</a></td>
+				</tr>
+	</tbody>
+</table>
+
+
+	<h2>Global Variables</h2>
+		<a name="locale"></a>
+		<h3>locale</h3>
+		<div class="description">
+			 The locale resolved by Spring's LocaleResolver. 
+		</div>
+			<hr />
+		<a name="documentUri"></a>
+		<h3>documentUri</h3>
+		<div class="description">
+			 The originating request URI. 
+		</div>
+			<hr />
+		<a name="includeUri"></a>
+		<h3>includeUri</h3>
+		<div class="description">
+			The path within the application.
+If the request is included via a RequestDispatcher, the variable contains
+the URI of the include, otherwise it's the same as documentUri. 
+ 
+		</div>
+			<hr />
+		<a name="topLevelHandlerName"></a>
+		<h3>topLevelHandlerName</h3>
+			<hr />
+		<a name="templateName"></a>
+		<h3>templateName</h3>
+	<h2>Macros &amp; Functions</h2>
+		<a name="include"></a>
+		<h3>include</h3>
+		<div class="signature">
+			&lt;@include path="" /&gt;
+		</div>
+		<div class="description">
+			Includes the given path using a RequestDispatcher. The argument may also be
+a sequence of paths, in which case multiple includes are performed.  
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name optional">path</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="capture"></a>
+		<h3>capture</h3>
+		<div class="signature">
+			capture(path="")
+		</div>
+		<div class="description">
+			Performs a request using a RequestDispatcher and returns the captured output.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name optional">path</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="setSharedProperty"></a>
+		<h3>setSharedProperty</h3>
+		<div class="signature">
+			&lt;@setSharedProperty key value /&gt;
+		</div>
+		<div class="description">
+			Sets a shared property. The concept and purpose of shared properties is 
+described at http://www.riotfamily.org/docs/push-ups.html#collaboration
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">key</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">value</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="getSharedProperty"></a>
+		<h3>getSharedProperty</h3>
+		<div class="signature">
+			getSharedProperty(key)
+		</div>
+		<div class="description">
+			Gets a shared property. The concept and purpose of shared properties is 
+described at http://www.riotfamily.org/docs/push-ups.html#collaboration
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">key</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="url"></a>
+		<h3>url</h3>
+		<div class="signature">
+			url(href)
+		</div>
+		<div class="description">
+			Adds the contextPath and sessionId to the given URI if necessary.
+${url('/foo.html')} => /context/foo.html;jsessionid=... 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">href</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="resolve"></a>
+		<h3>resolve</h3>
+		<div class="signature">
+			resolve(href)
+		</div>
+		<div class="description">
+			Adds the contextPath to the given path.
+${url('/foo.html')} => /context/foo.html 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">href</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="encodeLinks"></a>
+		<h3>encodeLinks</h3>
+		<div class="signature">
+			encodeLinks(html)
+		</div>
+		<div class="description">
+			Adds the contextPath and sessionId to all links found in the given HTML if necessary.
+${encodeLinks('Hello <a href="/world.html">World</a>')} => Hello <a href="/context/world.html;jsessionid=...">World</a> 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">html</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="resource"></a>
+		<h3>resource</h3>
+		<div class="signature">
+			resource(href)
+		</div>
+		<div class="description">
+			Adds the contextPath and a timestamp to the given URI.
+${resource('/style/main.css')} => /context/style/main.css?121345
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">href</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="isExternalUrl"></a>
+		<h3>isExternalUrl</h3>
+		<div class="signature">
+			isExternalUrl(href)
+		</div>
+		<div class="description">
+			Returns whether the given URL is external, i.e. has a schema part.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">href</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="absoluteUrl"></a>
+		<h3>absoluteUrl</h3>
+		<div class="signature">
+			absoluteUrl(href)
+		</div>
+		<div class="description">
+			Converts the given path into an absolute URL by adding the protocol,
+server-name, port and contextPath of the current request.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">href</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="urlForHandler"></a>
+		<h3>urlForHandler</h3>
+		<div class="signature">
+			urlForHandler(handlerName, attributes={}, prefix="")
+		</div>
+		<div class="description">
+			Returns the URL for the given handlerName. 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">handlerName</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">attributes</td>
+							<td class="description">
+								
+									Default is <code>{}</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">prefix</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="absoluteUrlForHandler"></a>
+		<h3>absoluteUrlForHandler</h3>
+		<div class="signature">
+			absoluteUrlForHandler(handlerName, attributes={}, prefix="")
+		</div>
+		<div class="description">
+			Returns the absolute URL for the given handlerName. 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">handlerName</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">attributes</td>
+							<td class="description">
+								
+									Default is <code>{}</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">prefix</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="isHandler"></a>
+		<h3>isHandler</h3>
+		<div class="signature">
+			isHandler(handlerName)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">handlerName</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="setParameter"></a>
+		<h3>setParameter</h3>
+		<div class="signature">
+			setParameter(url, name, value)
+		</div>
+		<div class="description">
+			Tries to replace the given parameter's value in the given URL's query string
+with the given new value or adds the parameter if it is not yet contained. 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">url</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">name</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">value</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="addParameter"></a>
+		<h3>addParameter</h3>
+		<div class="signature">
+			addParameter(url, name, value)
+		</div>
+		<div class="description">
+			Adds the given parameter to the given URL's query string.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">url</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">name</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">value</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="addRequestParameters"></a>
+		<h3>addRequestParameters</h3>
+		<div class="signature">
+			addRequestParameters(url)
+		</div>
+		<div class="description">
+			Adds all request parameters to the given URLs query string.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">url</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="randomItem"></a>
+		<h3>randomItem</h3>
+		<div class="signature">
+			randomItem(collection)
+		</div>
+		<div class="description">
+			Returns a random item from the given collection.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">collection</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="currentTime"></a>
+		<h3>currentTime</h3>
+		<div class="signature">
+			currentTime()
+		</div>
+		<div class="description">
+			Returns the current time as datetime value. The value does not change 
+during template processing. 
+  
+		</div>
+			<hr />
+		<a name="isInFuture"></a>
+		<h3>isInFuture</h3>
+		<div class="signature">
+			isInFuture(date="")
+		</div>
+		<div class="description">
+			Returns whether the given date is in the future. 
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name optional">date</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="partition"></a>
+		<h3>partition</h3>
+		<div class="signature">
+			partition(collection, property)
+		</div>
+		<div class="description">
+			Partitions a collection by inspecting the specified property
+of the contained items. If the property value is different than the 
+previous one, a new group is created and added to the returned sequence. 
+Each group consists of a hash with a 'title' and an 'items' property.    
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">collection</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name required">property</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="shuffle"></a>
+		<h3>shuffle</h3>
+		<div class="signature">
+			shuffle(collection)
+		</div>
+		<div class="description">
+			Shuffles the given collection
+
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">collection</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="baseName"></a>
+		<h3>baseName</h3>
+		<div class="signature">
+			baseName(path)
+		</div>
+		<div class="description">
+			Strips directory names and the query-string from a path.
+${baseName('/hello/world.html?foo=bar')} => world.html  
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">path</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="fileExtension"></a>
+		<h3>fileExtension</h3>
+		<div class="signature">
+			fileExtension(filename, validExtension=[], defaultExtension="")
+		</div>
+		<div class="description">
+			Returns the extension of the given file-name. If the validExtensions 
+parameter is specified, the defaultExtension will be returned if the actual
+extension is invalid.
+${fileExtension('foo.html')} => html
+${fileExtension('foo.bar', ['gif', 'jpg'], 'unknown')} => unknown
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">filename</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">validExtension</td>
+							<td class="description">
+								
+									Default is <code>[]</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">defaultExtension</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="formatByteSize"></a>
+		<h3>formatByteSize</h3>
+		<div class="signature">
+			formatByteSize(bytes)
+		</div>
+		<div class="description">
+			Returns a formatted string using an appropriate unit (Bytes, KB or MB).
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">bytes</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="formatMillis"></a>
+		<h3>formatMillis</h3>
+		<div class="signature">
+			formatMillis(millis)
+		</div>
+		<div class="description">
+			Returns a formatted string using the pattern hh:mm:ss. The hours are
+omitted if they are zero, the minutes are padded with a '0' character
+if they are less than 10.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">millis</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="formatNumber"></a>
+		<h3>formatNumber</h3>
+		<div class="signature">
+			formatNumber(number, pattern="#0.#", locale="en_US")
+		</div>
+		<div class="description">
+			Formats the given number using a custom pattern and locale.
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">number</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">pattern</td>
+							<td class="description">
+								
+									Default is <code>"#0.#"</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">locale</td>
+							<td class="description">
+								
+									Default is <code>"en_US"</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="round"></a>
+		<h3>round</h3>
+		<div class="signature">
+			round(number)
+		</div>
+		<div class="description">
+			Rounds the number to a decimal number
+  
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">number</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="toTitleCase"></a>
+		<h3>toTitleCase</h3>
+		<div class="signature">
+			toTitleCase(s)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">s</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="getMessage"></a>
+		<h3>getMessage</h3>
+		<div class="signature">
+			getMessage(code, args=[], default=code)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">code</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">args</td>
+							<td class="description">
+								
+									Default is <code>[]</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">default</td>
+							<td class="description">
+								
+									Default is <code>code</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="message"></a>
+		<h3>message</h3>
+		<div class="signature">
+			&lt;@message code args=[] default=code /&gt;
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">code</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">args</td>
+							<td class="description">
+								
+									Default is <code>[]</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">default</td>
+							<td class="description">
+								
+									Default is <code>code</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="attribute"></a>
+		<h3>attribute</h3>
+		<div class="signature">
+			&lt;@attribute name value="" /&gt;
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">name</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">value</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="if"></a>
+		<h3>if</h3>
+		<div class="signature">
+			&lt;@if value="" /&gt;
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name optional">value</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="link"></a>
+		<h3>link</h3>
+		<div class="signature">
+			&lt;@link href="" tag="a" externalClass="externalLink" externalTarget="_blank"	 attributes... /&gt;
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name optional">href</td>
+							<td class="description">
+								
+									Default is <code>""</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">tag</td>
+							<td class="description">
+								
+									Default is <code>"a"</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">externalClass</td>
+							<td class="description">
+								
+									Default is <code>"externalLink"</code>.
+							</td>
+						</tr>
+						<tr>
+							<td class="name optional">externalTarget</td>
+							<td class="description">
+								
+									Default is <code>"_blank"</code>.
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="hyphenate"></a>
+		<h3>hyphenate</h3>
+		<div class="signature">
+			hyphenate(html)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">html</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="hyphenateAndEncode"></a>
+		<h3>hyphenateAndEncode</h3>
+		<div class="signature">
+			hyphenateAndEncode(html)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">html</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+			<hr />
+		<a name="hyphenatePlainText"></a>
+		<h3>hyphenatePlainText</h3>
+		<div class="signature">
+			hyphenatePlainText(text)
+		</div>
+		<dl class="parameters">
+			<dt>Parameters:</dt>
+			<dd>
+				<table class="parameters">
+						<tr>
+							<td class="name required">text</td>
+							<td class="description">
+								
+							</td>
+						</tr>
+				</table>
+			</dd>
+		</dl>
+</body>
+</html>
+
