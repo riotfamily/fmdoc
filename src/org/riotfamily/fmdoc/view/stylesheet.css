@@ -1,6 +1,8 @@
 /* common */
 body {
 	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
 }
 hr {
 	margin: 30px 0 24px 0;
@@ -13,7 +15,6 @@ ul, li {
 }
 .nav {
 	background-color: #eeeeff;
-	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	margin-bottom: 20px; 
 	padding: 4px;
@@ -44,40 +45,70 @@ th {
 th, td {
 	padding: 3px;
 	border: 2px ridge;
+	vertical-align: top;
 }
 
 /* doc */
 #template .summary .type {
 	width: 80px;
+	text-align: right;
+	font-family: monospace;
 }
 
 .signature {
 	font-family: monospace;
 }
+.signature a {
+	font-weight: bold;
+}
+
+.variable .details,
+.macro .details {
+	margin-left: 40px;
+}
 .description {
 	margin: 14px 0;
+}
+.summary .description {
+	margin: 2px 0 0 32px;
 }
 h2 {
     background-color: #ccccff;
     padding: 3px;
     border: 2px ridge;
 }
+h4 {
+	margin: 12px 0 8px 0;
+}
+pre {
+	margin: 0 0 0 32px;
+	padding: 0;
+}
+
 dt {
     font-weight: bold;
 }
-
-table.parameters,
-table.parameters td {
-	border: none;
+dd {
+	margin: 8px 0 0 32px;
 }
 
 .parameters .name {
 	font-family: monospace;
-	white-space: nowrap;
-	width: 80px;
-	vertical-align: top;
+	font-weight: bold;
+}
+.parameters .description {
+	display: block;
+	margin: 2px 0 8px 0;
 }
 
-.parameters .optional {
-	color: #777;
+/* index-all */
+#index-all li {
+	margin-bottom: 12px;
+}
+#index-all li a {
+	font-weight: bold;
+	font-family: monospace;
+}
+#index-all li .description {
+	margin: 0 0 0 32px;
 }

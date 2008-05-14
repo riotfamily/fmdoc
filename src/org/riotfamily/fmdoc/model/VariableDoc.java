@@ -49,6 +49,10 @@ public class VariableDoc extends TemplateElementDoc {
 		}
 	}
 
+	public String getType() {
+		return "Variable";
+	}
+	
 	public String getName() {
 		return name;
 	}

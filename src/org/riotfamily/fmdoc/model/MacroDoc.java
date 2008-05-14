@@ -98,7 +98,11 @@ public class MacroDoc extends TemplateElementDoc {
 			}
 		}
 	}
-		
+	
+	public String getType() {
+		return "Macro";
+	}
+	
 	public String getName() {
 		return macro.getName();
 	}
@@ -129,6 +133,24 @@ public class MacroDoc extends TemplateElementDoc {
         sb.append(" /&gt;");
         return sb.toString();
     }
+	
+	public String getShortArgs() {
+		StringBuffer sb = new StringBuffer(" ");
+        String args[] = macro.getArgumentNames();
+        int size = args.length;
+        boolean hasArgs = false;
+        for (int i = 0; i < size; i++) {
+        	String arg = args[i]; 
+        	if (getDefaultValue(arg) == null) {
+        		if (hasArgs) {
+                    sb.append(" ");
+            	}
+	            sb.append(arg);
+	            hasArgs = true;
+        	}
+        }
+        return sb.toString();
+	}
 
 	public boolean isFunction() {
 		return macro.isFunction();

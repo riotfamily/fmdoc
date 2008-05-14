@@ -57,30 +57,31 @@ public class DocGenerator {
 		this.destdir = destdir;
 	}
 
-	public void generate(String name, Reader in) throws TemplateException, IOException {
-		
-		Template template = new Template(name, in, config);
-		
-		name = name.replace(File.separatorChar, '/');
-		int i = name.lastIndexOf('/');
-		if (i != -1) {
-			name = name.substring(i + 1);
+	public void generate(String name, Reader in, Logger log) {
+		Template template;
+		try {
+			template = new Template(name, in, config);
 		}
-		String dest = name;
-		i = dest.lastIndexOf('.');
-		if (i != -1) {
-			dest = dest.substring(0, i);
+		catch (IOException e) {
+			log.error("Error parsing " + name);
+			return;
 		}
-		dest += ".html";
-		
-		TemplateDoc doc = new TemplateDoc(template, dest);
+		TemplateDoc doc = new TemplateDoc(template, log);
 		if (doc.getNamespace() != null) {
 			Map map = Collections.singletonMap("template", doc);
-			
-			Writer out = new FileWriter(new File(destdir, dest));
-			
-			process("doc", map, out);
-			docs.add(doc);
+			String dest = doc.getNamespace() + ".html";
+			try {
+				Writer out = new FileWriter(new File(destdir, dest));
+				process("doc", map, out);
+				docs.add(doc);
+				log.info(name);
+			}
+			catch (TemplateException e) {
+				log.error("Error processing " + name);
+			}
+			catch (IOException e) {
+				log.error("Error processing " + name);
+			}
 		}
 	}
 	

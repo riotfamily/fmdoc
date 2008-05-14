@@ -30,8 +30,12 @@ public class TemplateDescription extends TemplateElementDoc {
 		super(templateDoc, comment);
 	}
 	
+	public String getType() {
+		return "Template";
+	}
+	
 	public String getName() {
-		return getTemplateDoc().getName();
+		return getTemplateDoc().getNamespace();
 	}
 	
 	public String getHref() {

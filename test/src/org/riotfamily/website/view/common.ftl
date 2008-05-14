@@ -12,7 +12,9 @@
 <#--- 
   - The path within the application.
   - If the request is included via a RequestDispatcher, the variable contains
-  - the URI of the include, otherwise it's the same as documentUri. 
+  - the URI of the include, otherwise it's the same as documentUri.
+  - @see <a href="http://www.riotfamily.org/api/latest/org/riotfamily/website/view/CommonMacroHelper.html#getPathWithinApplication()">
+  -      commonMacroHelper.getPathWithinApplication()</a>
  -->
 <#assign includeUri = commonMacroHelper.getPathWithinApplication() />
 
@@ -78,7 +80,10 @@
 
 <#---
   - Adds the contextPath and sessionId to all links found in the given HTML if necessary.
-  - ${encodeLinks('Hello <a href="/world.html">World</a>')} => Hello <a href="/context/world.html;jsessionid=...">World</a> 
+  - <h4>Example:</h4>
+  - <pre>${encodeLinks('Hello &lt;a href="/world.html"&gt;World&lt;/a&gt;')} 
+  - ==> Hello &lt;a href="/context/world.html;jsessionid=..."&gt;World&lt;/a&gt;
+  - </pre>
   -->
 <#function encodeLinks html>
 	<#return commonMacroHelper.resolveAndEncodeLinks(html) />

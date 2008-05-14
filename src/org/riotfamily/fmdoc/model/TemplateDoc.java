@@ -28,17 +28,16 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-
+import org.riotfamily.fmdoc.generator.Logger;
 
 import freemarker.core.Comment;
 import freemarker.core.Macro;
 import freemarker.core.TemplateElement;
 import freemarker.template.Template;
-import freemarker.template.TemplateModelException;
 
 public class TemplateDoc {
 
-	private String name;
+	private String path;
 	
 	private TemplateElementDoc comment;
 	
@@ -46,11 +45,8 @@ public class TemplateDoc {
 	
 	private List macros;
 	
-	private String href;
-
-	public TemplateDoc(Template template, String href) throws TemplateModelException {
-		this.name = template.getName();
-		this.href = href;
+	public TemplateDoc(Template template, Logger log) {
+		this.path = template.getName();
 		String text = null;
 		TemplateElement root = template.getRootTreeNode();
 		Enumeration children =  root.children();
@@ -71,6 +67,9 @@ public class TemplateDoc {
 			}
 			else if (child instanceof Macro) {
 				Macro macro = (Macro) child;
+				if (text == null) {
+					log.warn("Undocumented macro: " + macro.getName());
+				}
 				if (macro.isFunction()) {
 					addMacro(new FunctionDoc(this, text, macro));
 				}
@@ -82,7 +81,11 @@ public class TemplateDoc {
 			else {
 				String s = child.getCanonicalForm();
 				if (s.startsWith("<#assign")) {
-					addVariable(new VariableDoc(this, text, s));
+					VariableDoc var = new VariableDoc(this, text, s);
+					addVariable(var);
+					if (text == null) {
+						log.warn("Undocumented variable: " + var.getName());
+					}
 					text = null;
 				}
 			}
@@ -90,11 +93,15 @@ public class TemplateDoc {
 	}
 	
 	public String getName() {
-		return name;
+		return getNamespace();
 	}
 	
 	public String getNamespace() {
 		return comment.get("namespace");
+	}
+	
+	public String getPath() {
+		return path;
 	}
 	
 	public TemplateElementDoc getComment() {
@@ -128,7 +135,7 @@ public class TemplateDoc {
 	}
 		
 	public String getHref() {
-		return href;
+		return getNamespace() + ".html";
 	}
 	
 	public void addToIndex(Index index) {

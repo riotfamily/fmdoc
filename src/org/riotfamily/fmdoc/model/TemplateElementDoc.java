@@ -35,7 +35,7 @@ public abstract class TemplateElementDoc implements Comparable {
 	
 	/* Pattern to strip leading dashes from a comment line */
 	private static final Pattern LINE_START = 
-			Pattern.compile("^\\s*-+\\s*", Pattern.MULTILINE);
+			Pattern.compile("^\\s*-+\\s?", Pattern.MULTILINE);
 
 	/* Pattern to extract doc-tags like @since */
 	private static final Pattern DOC_TAG = 
@@ -45,13 +45,19 @@ public abstract class TemplateElementDoc implements Comparable {
 	private static final Pattern TAGS = 
 			Pattern.compile("^\\s*@[\\w\\W]*", Pattern.MULTILINE);
 	
+	/* Pattern to extract the first sentence of the description */
+	private static final Pattern SHORT_DESCRIPTION = 
+			Pattern.compile("^(?:<.*?>)?([\\W\\w]*?(\\.\\s(?=[^a-z])|\\.$|$))");
 	
 	private TemplateDoc templateDoc;
 	
 	/** The text up to the first doc-tag */
 	private String description;
 	
-	/** Map of List<String> keyed by tag name */
+	/** The first sentence of the description */
+	private String shortDescription;
+	
+	/** Map of Lists of Strings, keyed by tag name */
 	private Map tags = new HashMap();
 	
 	public TemplateElementDoc(TemplateDoc templateDoc, String comment) {
@@ -59,7 +65,11 @@ public abstract class TemplateElementDoc implements Comparable {
 		if (comment != null) {
 			comment = LINE_START.matcher(comment).replaceAll("");
 			description = TAGS.matcher(comment).replaceAll("");
-			Matcher m = DOC_TAG.matcher(comment);
+			Matcher m = SHORT_DESCRIPTION.matcher(description);
+			if (m.find()) {
+				shortDescription = m.group(1);
+			}
+			m = DOC_TAG.matcher(comment);
 			while (m.find()) {
 				String s = m.group(2);
 				if (s != null) {
@@ -102,9 +112,19 @@ public abstract class TemplateElementDoc implements Comparable {
 		return description;
 	}
 
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
 	public boolean isInternal() {
 		return get("internal") != null;
 	}
+	
+	public List getSeeAlso() {
+		return getTags("see");
+	}
+	
+	public abstract String getType();
 	
 	protected abstract String getName();
 	

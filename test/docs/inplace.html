@@ -11,11 +11,15 @@
 	<a href="overview-summary.html">Overview</a> <a href="index-all.html">Index</a>
 </div>
 <h1>inplace</h1>
-		<a name="org/riotfamily/components/view/inplace.ftl"></a>
-		<h3>org/riotfamily/components/view/inplace.ftl</h3>
-		<div class="description">
-			
-		</div>
+	<div class="details">
+			<div class="description">
+				
+			</div>
+	</div>
+<dl>
+	<dt>Path:</dt>
+	<dd>org/riotfamily/components/view/inplace.ftl</dd>
+</dl>
 
 <table class="summary">
 	<thead>
@@ -26,564 +30,655 @@
 	<tbody>
 				<tr>
 					<td class="type">Variable</td>
-					<td><a href="#editMode">editMode</a></td>
+					<td>
+						<div class="signature"><a href="#editMode">editMode</a></div>
+						<div class="description">Whether the page is viewed in edit-mode.
+</div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#toolbar">toolbar</a></td>
+					<td>
+						<div class="signature"><a href="#toolbar">toolbar</a> </div>
+						<div class="description">Macro that renders the Riot toolbar if the page is requested in edit-mode.
+</div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#callbacks">callbacks</a></td>
+					<td>
+						<div class="signature"><a href="#callbacks">callbacks</a> </div>
+						<div class="description">
+Macro that enables the Riot JavaScript edit-callbacks. </div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#entityList">entityList</a></td>
+					<td>
+						<div class="signature"><a href="#entityList">entityList</a> listId</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#componentSet">componentSet</a></td>
+					<td>
+						<div class="signature"><a href="#componentSet">componentSet</a> </div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#entity">entity</a></td>
+					<td>
+						<div class="signature"><a href="#entity">entity</a> object</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#text">text</a></td>
+					<td>
+						<div class="signature"><a href="#text">text</a> key</div>
+						<div class="description">Macro that makes content editable via the Riot toolbar. </div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#richtext">richtext</a></td>
+					<td>
+						<div class="signature"><a href="#richtext">richtext</a> key</div>
+						<div class="description">Macro that makes content editable via the Riot toolbar. </div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#editable">editable</a></td>
+					<td>
+						<div class="signature"><a href="#image">image</a> key</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#image">image</a></td>
+					<td>
+						<div class="signature"><a href="#link">link</a> key href</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#link">link</a></td>
-				</tr>
-				<tr>
-					<td class="type">Macro</td>
-					<td><a href="#use">use</a></td>
+					<td>
+						<div class="signature"><a href="#use">use</a> container</div>
+						<div class="description">  </div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#zebraClass">zebraClass</a></td>
+					<td>
+						<div class="signature"><a href="#zebraClass">zebraClass</a>()</div>
+						<div class="description">Returns either <code>"even"</code> or <code>"odd"</code>, depending on
+the position of a component within a list.
+</div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#moduloClass">moduloClass</a></td>
+					<td>
+						<div class="signature"><a href="#moduloClass">moduloClass</a>(pos)</div>
+						<div class="description">Returns <code>"every-xxx"</code>, depending on the position of a component 
+within a list. </div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#firstClass">firstClass</a></td>
+					<td>
+						<div class="signature"><a href="#firstClass">firstClass</a>()</div>
+						<div class="description">Returns <code>"first"</code> when the component is the first component
+within a list, an empty string otherwise.
+</div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#lastClass">lastClass</a></td>
+					<td>
+						<div class="signature"><a href="#lastClass">lastClass</a>()</div>
+						<div class="description">Returns <code>"last"</code> when the component is the last component
+within a list, an empty string otherwise.
+</div>
+					</td>
 				</tr>
 	</tbody>
 </table>
 
 
 	<h2>Global Variables</h2>
+		<div class="variable">
 		<a name="editMode"></a>
 		<h3>editMode</h3>
+	<div class="details">
+			<div class="description">
+				Whether the page is viewed in edit-mode.
+<h4>Example:</h4>
+<pre>
+&lt;#if inplace.editMode&gt;
+  Hello Riot user!
+&lt;#else&gt;
+  Hello visitor!
+&lt;/#if&gt;
+</pre>
+  
+			</div>
+	</div>
+		</div>
 	<h2>Macros &amp; Functions</h2>
+		<div class="macro">
 		<a name="toolbar"></a>
 		<h3>toolbar</h3>
 		<div class="signature">
 			&lt;@toolbar  /&gt;
 		</div>
-		<div class="description">
-			Macro that renders the Riot toolbar if the page is requested in edit mode.
+	<div class="details">
+			<div class="description">
+				Macro that renders the Riot toolbar if the page is requested in edit-mode.
   
-		</div>
+			</div>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="callbacks"></a>
 		<h3>callbacks</h3>
 		<div class="signature">
 			&lt;@callbacks  /&gt;
 		</div>
-		<div class="description">
-			Macro that enables the Riot JavaScript edit-callbacks. The callback functions
-are invoked when a component-list is re-rendered. To register a custom callback
-add the following code as nested content:
+	<div class="details">
+			<div class="description">
+				<p>
+Macro that enables the Riot JavaScript edit-callbacks. The callback 
+functions are invoked when a controller is re-rendered via AJAX. 
+To register a custom callback, add the following code as nested content:
+</p>
+<pre>
 addRiotEditCallback(function(el) {
-alert('ComponentList updated: ' + el.componentList.id);
+    alert('ComponentList updated: ' + el.componentList.id);
 });
+</pre>
   
-		</div>
+			</div>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="entityList"></a>
 		<h3>entityList</h3>
 		<div class="signature">
 			&lt;@entityList listId /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">listId</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">listId</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="componentSet"></a>
 		<h3>componentSet</h3>
 		<div class="signature">
 			&lt;@componentSet 	 attributes... /&gt;
 		</div>
+	<div class="details">
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="entity"></a>
 		<h3>entity</h3>
 		<div class="signature">
 			&lt;@entity object form="" /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">object</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">object</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">form</td>
-							<td class="description">
+							</span>
+							<span class="name optional">form</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="text"></a>
 		<h3>text</h3>
 		<div class="signature">
 			&lt;@text key tag="" alwaysUseNested=false textTransform=true hyphenate=false	 attributes... /&gt;
 		</div>
-		<div class="description">
-			Macro that makes content editable via the Riot toolbar. The text is edited
+	<div class="details">
+			<div class="description">
+				Macro that makes content editable via the Riot toolbar. The text is edited
 in-line, which means that no further markup is supported, except for
 line-breaks which are converted to &lt;br /&gt; tags.
-- The call is delegated to the editable macro, using editor="text".
-See: <@editable> for a description of the supported parameters.
-  
-		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">key</td>
-							<td class="description">
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
-								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">alwaysUseNested</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">textTransform</td>
-							<td class="description">
-								
-									Default is <code>true</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">hyphenate</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+
+			</div>
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">key</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
+								The model key that contains the content.
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
+								Name of the HTML tag that surrounds the text. If not specified,         no tag will be rendered (Note: for technical reasons a tag is  	   always rendered when the page is viewed in edit-mode).
+							</span>
+							<span class="name optional">alwaysUseNested</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
+								If set to true, the nested content is always         evaluated. Otherwise the nested content is used as default, if no         value is found in the model under the specified key. Use this flag        if you need to perform additional transformations.
+							</span>
+							<span class="name optional">textTransform</span>
+							<span class="default">
+									(optional, default is <code>true</code>)
+							</span>
+							<span class="description">
+								If set to true, the CSS text-transform property of         the edited element is also applied to the input field. You may turn        this feature off so that users can verify the correct case of         their input.
+							</span>
+							<span class="name optional">hyphenate</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
+								Whether soft hyphens should be inserted automatically.
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="richtext"></a>
 		<h3>richtext</h3>
 		<div class="signature">
 			&lt;@richtext key tag="" config="default" alwaysUseNested=false chunk=false hyphenate=false	 attributes... /&gt;
 		</div>
-		<div class="description">
-			Macro that makes content editable via the Riot toolbar. The text is edited
-via TinyMCE which is displayed as 'inline-popup'.
-The call delegated to the editable macro, using editor="richtext" or
-editor="richtext-chunks", depending on the chunk parameter.
+	<div class="details">
+			<div class="description">
+				Macro that makes content editable via the Riot toolbar. The text is edited
+via TinyMCE which is displayed as inline-popup.
 
-		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">key</td>
-							<td class="description">
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
-								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">config</td>
-							<td class="description">
-								
-									Default is <code>"default"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">alwaysUseNested</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">chunk</td>
-							<td class="description">
-								If set to true, the content will be split up into multiple components for each top-level block element. Default is false.
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">hyphenate</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+			</div>
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">key</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
+								The model key that contains the content.
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
+								Name of the HTML tag that surrounds the text. If not specified,         no tag will be rendered (Note: for technical reasons a tag is  	   always rendered when the page is viewed in edit-mode).
+							</span>
+							<span class="name optional">config</span>
+							<span class="default">
+									(optional, default is <code>"default"</code>)
+							</span>
+							<span class="description">
+								Name of a TinyMCE config set.
+							</span>
+							<span class="name optional">alwaysUseNested</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
+								If set to true, the nested content is always         evaluated. Otherwise the nested content is used as default, if no         value is found in the model under the specified key. Use this flag        if you need to perform additional transformations.
+							</span>
+							<span class="name optional">chunk</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
+								If set to true, the content will be split up into multiple        components for each top-level block element.
+							</span>
+							<span class="name optional">hyphenate</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
+								Whether soft hyphens should be inserted automatically.
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
-		<a name="editable"></a>
-		<h3>editable</h3>
-		<div class="signature">
-			&lt;@editable key editor="text" tag="" alwaysUseNested=false transform=false	 attributes... /&gt;
-		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">key</td>
-							<td class="description">
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">editor</td>
-							<td class="description">
-								
-									Default is <code>"text"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
-								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">alwaysUseNested</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">transform</td>
-							<td class="description">
-								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
-			<hr />
+		<div class="macro">
 		<a name="image"></a>
 		<h3>image</h3>
 		<div class="signature">
 			&lt;@image key default="" tag="img" minWidth="10" maxWidth="1000" minHeight="10" maxHeight="1000" width="" height="" defaultWidth="100" defaultHeight="100" transform=common.url updateFromServer=false	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">key</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">key</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">default</td>
-							<td class="description">
+							</span>
+							<span class="name optional">default</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>"img"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"img"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">minWidth</td>
-							<td class="description">
+							</span>
+							<span class="name optional">minWidth</span>
+							<span class="default">
+									(optional, default is <code>"10"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"10"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">maxWidth</td>
-							<td class="description">
+							</span>
+							<span class="name optional">maxWidth</span>
+							<span class="default">
+									(optional, default is <code>"1000"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"1000"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">minHeight</td>
-							<td class="description">
+							</span>
+							<span class="name optional">minHeight</span>
+							<span class="default">
+									(optional, default is <code>"10"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"10"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">maxHeight</td>
-							<td class="description">
+							</span>
+							<span class="name optional">maxHeight</span>
+							<span class="default">
+									(optional, default is <code>"1000"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"1000"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">width</td>
-							<td class="description">
+							</span>
+							<span class="name optional">width</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">height</td>
-							<td class="description">
+							</span>
+							<span class="name optional">height</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">defaultWidth</td>
-							<td class="description">
+							</span>
+							<span class="name optional">defaultWidth</span>
+							<span class="default">
+									(optional, default is <code>"100"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"100"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">defaultHeight</td>
-							<td class="description">
+							</span>
+							<span class="name optional">defaultHeight</span>
+							<span class="default">
+									(optional, default is <code>"100"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"100"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">transform</td>
-							<td class="description">
+							</span>
+							<span class="name optional">transform</span>
+							<span class="default">
+									(optional, default is <code>common.url</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>common.url</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">updateFromServer</td>
-							<td class="description">
+							</span>
+							<span class="name optional">updateFromServer</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="link"></a>
 		<h3>link</h3>
 		<div class="signature">
 			&lt;@link key href tag="a" externalClass="externalLink" externalTarget="_blank" alwaysUseNested=false textTransform=true hyphenate=false	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">key</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">key</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">href</td>
-							<td class="description">
+							</span>
+							<span class="name required">href</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>"a"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"a"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">externalClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">externalClass</span>
+							<span class="default">
+									(optional, default is <code>"externalLink"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"externalLink"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">externalTarget</td>
-							<td class="description">
+							</span>
+							<span class="name optional">externalTarget</span>
+							<span class="default">
+									(optional, default is <code>"_blank"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"_blank"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">alwaysUseNested</td>
-							<td class="description">
+							</span>
+							<span class="name optional">alwaysUseNested</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">textTransform</td>
-							<td class="description">
+							</span>
+							<span class="name optional">textTransform</span>
+							<span class="default">
+									(optional, default is <code>true</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>true</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">hyphenate</td>
-							<td class="description">
+							</span>
+							<span class="name optional">hyphenate</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="use"></a>
 		<h3>use</h3>
 		<div class="signature">
 			&lt;@use container model=container.getProperties(editMode) form="" tag=""	 attributes... /&gt;
 		</div>
-		<div class="description">
-			
-		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">container</td>
-							<td class="description">
+	<div class="details">
+			<div class="description">
+				  
+			</div>
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">container</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">model</td>
-							<td class="description">
+							</span>
+							<span class="name optional">model</span>
+							<span class="default">
+									(optional, default is <code>container.getProperties(editMode)</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>container.getProperties(editMode)</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">form</td>
-							<td class="description">
+							</span>
+							<span class="name optional">form</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="zebraClass"></a>
 		<h3>zebraClass</h3>
 		<div class="signature">
 			zebraClass()
 		</div>
+	<div class="details">
+			<div class="description">
+				Returns either <code>"even"</code> or <code>"odd"</code>, depending on
+the position of a component within a list.
+  
+			</div>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="moduloClass"></a>
 		<h3>moduloClass</h3>
 		<div class="signature">
 			moduloClass(pos)
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">pos</td>
-							<td class="description">
+	<div class="details">
+			<div class="description">
+				Returns <code>"every-xxx"</code>, depending on the position of a component 
+within a list. For example <code>moduloClass(3)</code> returns 
+<code>"every-3rd"</code> for every third component in the list and an empty
+string for all other components.
+  
+			</div>
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">pos</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="firstClass"></a>
 		<h3>firstClass</h3>
 		<div class="signature">
 			firstClass()
 		</div>
+	<div class="details">
+			<div class="description">
+				Returns <code>"first"</code> when the component is the first component
+within a list, an empty string otherwise.
+  
+			</div>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="lastClass"></a>
 		<h3>lastClass</h3>
 		<div class="signature">
 			lastClass()
 		</div>
+	<div class="details">
+			<div class="description">
+				Returns <code>"last"</code> when the component is the last component
+within a list, an empty string otherwise.
+  
+			</div>
+	</div>
+		</div>	
 </body>
 </html>
 

@@ -11,12 +11,16 @@
 	<a href="overview-summary.html">Overview</a> <a href="index-all.html">Index</a>
 </div>
 <h1>form</h1>
-		<a name="org/riotfamily/website/view/form.ftl"></a>
-		<h3>org/riotfamily/website/view/form.ftl</h3>
-		<div class="description">
-			Alternative to Spring's form macros.
+	<div class="details">
+			<div class="description">
+				Alternative to Spring's form macros.
 
-		</div>
+			</div>
+	</div>
+<dl>
+	<dt>Path:</dt>
+	<dd>org/riotfamily/website/view/form.ftl</dd>
+</dl>
 
 <table class="summary">
 	<thead>
@@ -27,641 +31,754 @@
 	<tbody>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#form">form</a></td>
+					<td>
+						<div class="signature"><a href="#form">form</a> command</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#hasErrors">hasErrors</a></td>
+					<td>
+						<div class="signature"><a href="#hasErrors">hasErrors</a>()</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#listErrors">listErrors</a></td>
+					<td>
+						<div class="signature"><a href="#listErrors">listErrors</a> </div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#label">label</a></td>
+					<td>
+						<div class="signature"><a href="#label">label</a> for</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#getValue">getValue</a></td>
+					<td>
+						<div class="signature"><a href="#getValue">getValue</a>(field)</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#input">input</a></td>
+					<td>
+						<div class="signature"><a href="#input">input</a> type field</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#textarea">textarea</a></td>
+					<td>
+						<div class="signature"><a href="#textarea">textarea</a> field</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#select">select</a></td>
+					<td>
+						<div class="signature"><a href="#select">select</a> field options</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#checkbox">checkbox</a></td>
+					<td>
+						<div class="signature"><a href="#checkbox">checkbox</a> field</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#checkboxes">checkboxes</a></td>
+					<td>
+						<div class="signature"><a href="#checkboxes">checkboxes</a> field options</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#radioButtons">radioButtons</a></td>
+					<td>
+						<div class="signature"><a href="#radioButtons">radioButtons</a> field options</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#listOptions">listOptions</a></td>
+					<td>
+						<div class="signature"><a href="#listOptions">listOptions</a> field options</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#option">option</a></td>
+					<td>
+						<div class="signature"><a href="#option">option</a> value</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Macro</td>
-					<td><a href="#check">check</a></td>
+					<td>
+						<div class="signature"><a href="#check">check</a> checked</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#containsString">containsString</a></td>
+					<td>
+						<div class="signature"><a href="#containsString">containsString</a>(seq, s)</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#addErrorClass">addErrorClass</a></td>
+					<td>
+						<div class="signature"><a href="#addErrorClass">addErrorClass</a>(attributes, field, errorClass)</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#getStatus">getStatus</a></td>
+					<td>
+						<div class="signature"><a href="#getStatus">getStatus</a>()</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 				<tr>
 					<td class="type">Function</td>
-					<td><a href="#join">join</a></td>
+					<td>
+						<div class="signature"><a href="#join">join</a>(attributes)</div>
+						<div class="description"></div>
+					</td>
 				</tr>
 	</tbody>
 </table>
 
 
 	<h2>Macros &amp; Functions</h2>
+		<div class="macro">
 		<a name="form"></a>
 		<h3>form</h3>
 		<div class="signature">
 			&lt;@form command	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">command</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">command</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="hasErrors"></a>
 		<h3>hasErrors</h3>
 		<div class="signature">
 			hasErrors(field="")
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name optional">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name optional">field</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="listErrors"></a>
 		<h3>listErrors</h3>
 		<div class="signature">
 			&lt;@listErrors field="" tag=""	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name optional">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name optional">field</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">tag</td>
-							<td class="description">
+							</span>
+							<span class="name optional">tag</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="label"></a>
 		<h3>label</h3>
 		<div class="signature">
 			&lt;@label for field=for errorClass="error" code=""	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">for</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">for</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">field</td>
-							<td class="description">
+							</span>
+							<span class="name optional">field</span>
+							<span class="default">
+									(optional, default is <code>for</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>for</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">errorClass</span>
+							<span class="default">
+									(optional, default is <code>"error"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"error"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">code</td>
-							<td class="description">
+							</span>
+							<span class="name optional">code</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="getValue"></a>
 		<h3>getValue</h3>
 		<div class="signature">
 			getValue(field)
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="input"></a>
 		<h3>input</h3>
 		<div class="signature">
 			&lt;@input type field id=field errorClass="error"	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">type</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">type</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+							</span>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">id</td>
-							<td class="description">
+							</span>
+							<span class="name optional">id</span>
+							<span class="default">
+									(optional, default is <code>field</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>field</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">errorClass</span>
+							<span class="default">
+									(optional, default is <code>"error"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"error"</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="textarea"></a>
 		<h3>textarea</h3>
 		<div class="signature">
 			&lt;@textarea field id=field errorClass="error"	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">id</td>
-							<td class="description">
+							</span>
+							<span class="name optional">id</span>
+							<span class="default">
+									(optional, default is <code>field</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>field</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">errorClass</span>
+							<span class="default">
+									(optional, default is <code>"error"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"error"</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="select"></a>
 		<h3>select</h3>
 		<div class="signature">
 			&lt;@select field options id=field errorClass="error" valueProperty="" labelProperty="" messagePrefix="" addEmptyOption=false emptyValue="" emptyLabel=""	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">options</td>
-							<td class="description">
+							</span>
+							<span class="name required">options</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">id</td>
-							<td class="description">
+							</span>
+							<span class="name optional">id</span>
+							<span class="default">
+									(optional, default is <code>field</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>field</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">errorClass</span>
+							<span class="default">
+									(optional, default is <code>"error"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"error"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">valueProperty</td>
-							<td class="description">
+							</span>
+							<span class="name optional">valueProperty</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">labelProperty</td>
-							<td class="description">
+							</span>
+							<span class="name optional">labelProperty</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">messagePrefix</td>
-							<td class="description">
+							</span>
+							<span class="name optional">messagePrefix</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">addEmptyOption</td>
-							<td class="description">
+							</span>
+							<span class="name optional">addEmptyOption</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">emptyValue</td>
-							<td class="description">
+							</span>
+							<span class="name optional">emptyValue</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">emptyLabel</td>
-							<td class="description">
+							</span>
+							<span class="name optional">emptyLabel</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="checkbox"></a>
 		<h3>checkbox</h3>
 		<div class="signature">
 			&lt;@checkbox field id=field errorClass="error" value="on"	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">id</td>
-							<td class="description">
+							</span>
+							<span class="name optional">id</span>
+							<span class="default">
+									(optional, default is <code>field</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>field</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name optional">errorClass</span>
+							<span class="default">
+									(optional, default is <code>"error"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"error"</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">value</td>
-							<td class="description">
+							</span>
+							<span class="name optional">value</span>
+							<span class="default">
+									(optional, default is <code>"on"</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>"on"</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="checkboxes"></a>
 		<h3>checkboxes</h3>
 		<div class="signature">
 			&lt;@checkboxes field options /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">options</td>
-							<td class="description">
+							</span>
+							<span class="name required">options</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="radioButtons"></a>
 		<h3>radioButtons</h3>
 		<div class="signature">
 			&lt;@radioButtons field options /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">options</td>
-							<td class="description">
+							</span>
+							<span class="name required">options</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="listOptions"></a>
 		<h3>listOptions</h3>
 		<div class="signature">
 			&lt;@listOptions field options valueProperty="" labelProperty="" messagePrefix="" /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">options</td>
-							<td class="description">
+							</span>
+							<span class="name required">options</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">valueProperty</td>
-							<td class="description">
+							</span>
+							<span class="name optional">valueProperty</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">labelProperty</td>
-							<td class="description">
+							</span>
+							<span class="name optional">labelProperty</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">messagePrefix</td>
-							<td class="description">
+							</span>
+							<span class="name optional">messagePrefix</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="option"></a>
 		<h3>option</h3>
 		<div class="signature">
 			&lt;@option value label=value selected=false	 attributes... /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">value</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">value</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">label</td>
-							<td class="description">
+							</span>
+							<span class="name optional">label</span>
+							<span class="default">
+									(optional, default is <code>value</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>value</code>.
-							</td>
-						</tr>
-						<tr>
-							<td class="name optional">selected</td>
-							<td class="description">
+							</span>
+							<span class="name optional">selected</span>
+							<span class="default">
+									(optional, default is <code>false</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>false</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="check"></a>
 		<h3>check</h3>
 		<div class="signature">
 			&lt;@check checked /&gt;
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">checked</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">checked</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="containsString"></a>
 		<h3>containsString</h3>
 		<div class="signature">
 			containsString(seq, s)
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">seq</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">seq</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">s</td>
-							<td class="description">
+							</span>
+							<span class="name required">s</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="addErrorClass"></a>
 		<h3>addErrorClass</h3>
 		<div class="signature">
 			addErrorClass(attributes, field, errorClass)
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">attributes</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">attributes</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">field</td>
-							<td class="description">
+							</span>
+							<span class="name required">field</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-						<tr>
-							<td class="name required">errorClass</td>
-							<td class="description">
+							</span>
+							<span class="name required">errorClass</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="getStatus"></a>
 		<h3>getStatus</h3>
 		<div class="signature">
 			getStatus(field="")
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name optional">field</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name optional">field</span>
+							<span class="default">
+									(optional, default is <code>""</code>)
+							</span>
+							<span class="description">
 								
-									Default is <code>""</code>.
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 			<hr />
+		<div class="macro">
 		<a name="join"></a>
 		<h3>join</h3>
 		<div class="signature">
 			join(attributes)
 		</div>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-						<tr>
-							<td class="name required">attributes</td>
-							<td class="description">
+	<div class="details">
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+							<span class="name required">attributes</span>
+							<span class="default">
+									(required)
+							</span>
+							<span class="description">
 								
-							</td>
-						</tr>
-				</table>
-			</dd>
-		</dl>
+							</span>
+				</dd>
+			</dl>
+	</div>
+		</div>	
 </body>
 </html>
 

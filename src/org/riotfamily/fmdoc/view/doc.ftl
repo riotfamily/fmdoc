@@ -7,13 +7,19 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body id="template">
+
 <div class="nav">
 	<a href="overview-summary.html">Overview</a> <a href="index-all.html">Index</a>
 </div>
+
 <h1>${template.namespace}</h1>
 <#if template.comment??>
-	<@comment template.comment />
+	<@details template.comment />
 </#if>
+<dl class="path">
+	<dt>Path:</dt>
+	<dd>${template.path}</dd>
+</dl>
 
 <table class="summary">
 	<thead>
@@ -25,16 +31,22 @@
 		<#if template.variables??>
 			<#list template.variables as var>
 				<tr>
-					<td class="type">Variable</td>
-					<td><a href="#${var.name}">${var.name}</a></td>
+					<td class="type">${var.type}</td>
+					<td>
+						<div class="signature"><a href="#${var.name}">${var.name}</a></div>
+						<div class="description">${var.shortDescription!}</div>
+					</td>
 				</tr>
 			</#list>
 		</#if>
 		<#if template.macros??>
 			<#list template.macros as macro>
 				<tr>
-					<td class="type">${macro.function?string('Function', 'Macro')}</td>
-					<td><a href="#${macro.name}">${macro.name}</a></td>
+					<td class="type">${macro.type}</td>
+					<td>
+						<div class="signature"><a href="#${macro.name}">${macro.name}</a>${macro.shortArgs}</div>
+						<div class="description">${macro.shortDescription!}</div>
+					</td>
 				</tr>
 			</#list>
 		</#if>
@@ -45,7 +57,9 @@
 <#if template.variables??>
 	<h2>Global Variables</h2>
 	<#list template.variables as var>
-		<@comment var />
+		<div class="variable">
+			<@doc var />
+		</div>
 		<#if var_has_next>
 			<hr />
 		</#if>	
@@ -54,7 +68,9 @@
 <#if template.macros??>
 	<h2>Macros &amp; Functions</h2>
 	<#list template.macros as macro>
-		<@comment macro />	
+		<div class="macro">
+			<@doc macro />
+		</div>	
 		<#if macro_has_next>
 			<hr />
 		</#if>
@@ -63,51 +79,67 @@
 </body>
 </html>
 
-<#macro comment comment>
-	<#if comment.name??>
-		<a name="${comment.name}"></a>
-		<h3>${comment.name}</h3>
+<#macro doc doc>
+	<#if doc.name??>
+		<a name="${doc.name}"></a>
+		<h3>${doc.name}</h3>
 	</#if>
-	<#if comment.signature??>
+	<#if doc.signature??>
 		<div class="signature">
-			${comment.signature}
+			${doc.signature}
 		</div>
 	</#if>
-	<#if comment.description??>
-		<div class="description">
-			${comment.description}
-		</div>
-	</#if>
-	<#if comment.parameters??>
-		<dl class="parameters">
-			<dt>Parameters:</dt>
-			<dd>
-				<table class="parameters">
-					<#list comment.parameters as param>
-						<tr>
-							<td class="name ${param.required?string('required', 'optional')}">${param.name}</td>
-							<td class="description">
+	<@details doc />
+</#macro>
+
+<#macro details doc>
+	<div class="details">
+		<#if doc.description??>
+			<div class="description">
+				${doc.description}
+			</div>
+		</#if>
+		<#if doc.parameters??>
+			<dl class="parameters">
+				<dt>Parameters:</dt>
+				<dd>
+					<#list doc.parameters as param>
+							<span class="name ${param.required?string('required', 'optional')}">${param.name}</span>
+							<span class="default">
+								<#if param.required>
+									(required)
+								<#else>
+									(optional, default is <code>${param.defaultValue}</code>)
+								</#if>
+							</span>
+							<span class="description">
 								${param.description!}
-								<#if param.defaultValue??>
-									Default is <code>${param.defaultValue}</code>.
-								</#if>	
-							</td>
-						</tr>
+							</span>
 					</#list>
-				</table>
-			</dd>
-		</dl>
-	</#if>
-	<#if comment.returns??>
-		<dl class="returns">
-			<dt>Returns:</dt>
-			<dd>${comment.returns}</dd>
-		</dl>
-	</#if>
-	<#if comment.since??>
-		<dl class="since">
-			<dt>Since:</dt>
-			<dd>${comment.since}</dd>
-		</dl>
-	</#if>
+				</dd>
+			</dl>
+		</#if>
+		<#if doc.returns??>
+			<dl class="returns">
+				<dt>Returns:</dt>
+				<dd>${doc.returns}</dd>
+			</dl>
+		</#if>
+		<#if doc.since??>
+			<dl class="since">
+				<dt>Since:</dt>
+				<dd>${doc.since}</dd>
+			</dl>
+		</#if>
+		<#if doc.seeAlso??>
+			<dl class="see">
+				<dt>See Also:</dt>
+				<dd>
+					<#list doc.seeAlso as see>
+						${see}<br />
+					</#list>
+				</dd>
+			</dl>
+		</#if>
+	</div>
 </#macro>

@@ -24,7 +24,10 @@
 		<h1>${letter}</h1>
 		<ul>
 			<#list index.docs[letter] as doc>
-				<li><a href="${doc.href}">${doc.name}</a></li>
+				<li>
+					<a href="${doc.href}">${doc.name}</a> <span class="type">(${doc.type})</span>
+					<div class="description">${doc.shortDescription!}</div>
+				</li>
 			</#list>
 		</ul>
 		<#if letter_has_next>

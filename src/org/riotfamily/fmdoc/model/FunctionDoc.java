@@ -33,10 +33,14 @@ public class FunctionDoc extends MacroDoc {
 		super(templateDoc, comment, macro);
 	}
 
+	public String getType() {
+		return "Function";
+	}
+	
 	public String getSignature() {
         StringBuffer sb = new StringBuffer();
         sb.append(getName());
-        sb.append("(");
+        sb.append('(');
         String args[] = getMacro().getArgumentNames();
         int size = args.length;
         for (int i = 0; i < size; i++) {
@@ -50,6 +54,31 @@ public class FunctionDoc extends MacroDoc {
             if (i != (size-1)) {
                 sb.append(", ");
             }
+        }
+        if (getMacro().getCatchAll() != null) {
+        	sb.append(", ");
+        	sb.append(getMacro().getCatchAll());
+        	sb.append("...");
+        }
+        sb.append(')');
+        return sb.toString();
+    }
+	
+	public String getShortArgs() {
+        StringBuffer sb = new StringBuffer();
+        sb.append('(');
+        String args[] = getMacro().getArgumentNames();
+        int size = args.length;
+        boolean hasArgs = false;
+        for (int i = 0; i < size; i++) {
+        	String arg = args[i];
+        	if (getDefaultValue(arg) == null) {
+            	if (hasArgs) {
+                    sb.append(", ");
+                }
+	            sb.append(arg);
+	            hasArgs = true;
+        	}
         }
         if (getMacro().getCatchAll() != null) {
         	sb.append(", ");

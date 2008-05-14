@@ -32,8 +32,10 @@ import java.util.Iterator;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.LogLevel;
 import org.apache.tools.ant.types.Resource;
 import org.riotfamily.fmdoc.generator.DocGenerator;
+import org.riotfamily.fmdoc.generator.Logger;
 
 public class FreeMarkerDocTask extends Task {
 	
@@ -42,6 +44,8 @@ public class FreeMarkerDocTask extends Task {
 	private File destdir;
 	
 	private FileSet fileSet;
+	
+	private Logger log = new AntLogger();
 	
 	public void setDestdir(File destdir) {
 		this.destdir = destdir;
@@ -57,10 +61,9 @@ public class FreeMarkerDocTask extends Task {
 			Iterator it = fileSet.iterator();
 			while (it.hasNext()) {
 				Resource res = (Resource) it.next();
-				System.out.println(res.getName());
 				Reader in = new InputStreamReader(res.getInputStream());
 				String name = res.getName();
-				generator.generate(name, in);
+				generator.generate(name, in, log);
 			}
 			generator.generateIndexFiles();
 		}
@@ -68,5 +71,21 @@ public class FreeMarkerDocTask extends Task {
 			e.printStackTrace();
 			throw new BuildException(e);
 		}
+	}
+	
+	private class AntLogger implements Logger {
+
+		public void info(String msg) {
+			log(msg, LogLevel.INFO.getLevel());
+		}
+		
+		public void warn(String msg) {
+			log(msg, LogLevel.WARN.getLevel());
+		}
+		
+		public void error(String msg) {
+			log(msg, LogLevel.ERR.getLevel());
+		}
+		
 	}
 }
