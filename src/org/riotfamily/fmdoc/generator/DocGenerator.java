@@ -87,6 +87,7 @@ public class DocGenerator {
 	
 	public void generateIndexFiles() throws TemplateException, IOException {
 		Map model = new HashMap();
+		Collections.sort(docs);
 		model.put("templates", docs);
 		model.put("index", new Index(docs));
 		process("overview-summary", model);

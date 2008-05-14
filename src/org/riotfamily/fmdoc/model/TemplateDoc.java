@@ -35,7 +35,7 @@ import freemarker.core.Macro;
 import freemarker.core.TemplateElement;
 import freemarker.template.Template;
 
-public class TemplateDoc {
+public class TemplateDoc implements Comparable {
 
 	private String path;
 	
@@ -142,5 +142,10 @@ public class TemplateDoc {
 		index.add(comment);
 		index.addAll(variables);
 		index.addAll(macros);
+	}
+	
+	public int compareTo(Object obj) {
+		TemplateDoc other = (TemplateDoc) obj;
+		return comment.compareTo(other.comment);
 	}
 }
