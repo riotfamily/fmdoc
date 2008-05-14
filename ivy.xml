@@ -2,8 +2,10 @@
     <info organisation="riotfamily" module="fmdoc" revision="0.1" />
     <configurations>
     	<conf name="default" />
+    	<conf name="build" extends="default" />
     </configurations>
     <dependencies>
 		<dependency org="freemarker" name="freemarker" rev="2.3.12" conf="default" />
+		<dependency org="apache" name="ant" rev="1.7.0" conf="build->default" />
     </dependencies>
 </ivy-module>
