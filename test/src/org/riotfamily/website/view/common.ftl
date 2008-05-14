@@ -18,13 +18,24 @@
  -->
 <#assign includeUri = commonMacroHelper.getPathWithinApplication() />
 
+<#--- 
+  - The name of the top-level handler.
+  - @see <a href="http://www.riotfamily.org/api/latest/org/riotfamily/website/view/CommonMacroHelper.html#getTopLevelHandlerName()">
+  -      commonMacroHelper.getTopLevelHandlerName()</a>
+ -->
 <#assign topLevelHandlerName = commonMacroHelper.getTopLevelHandlerName()?if_exists />
 
+<#--- 
+  - The name of the current FreeMarker template (may be useful for debugging).
+  - @see <a href="http://www.riotfamily.org/api/latest/org/riotfamily/common/web/view/freemarker/RiotFreeMarkerView.html">RiotFreeMarkerView</a>
+ -->
 <#assign templateName = .data_model['org.riotfamily.common.web.view.freemarker.RiotFreeMarkerView.templateName']! />
 
 <#---
   - Includes the given path using a RequestDispatcher. The argument may also be
-  - a sequence of paths, in which case multiple includes are performed.  
+  - a sequence of paths, in which case multiple includes are performed.
+  - If the given path is empty (default), no include is performed. 
+  - @param path A path or sequence of paths to include
   -->
 <#macro include path="">
 <#compress>
@@ -47,7 +58,7 @@
 
 <#---
   - Sets a shared property. The concept and purpose of shared properties is 
-  - described at http://www.riotfamily.org/docs/push-ups.html#collaboration
+  - described <a href="http://www.riotfamily.org/docs/push-ups.html#collaboration">here</a>.
   -->
 <#macro setSharedProperty key value>
 	<#local x = commonMacroHelper.setSharedProperty(key, value) />
@@ -55,7 +66,7 @@
 
 <#---
   - Gets a shared property. The concept and purpose of shared properties is 
-  - described at http://www.riotfamily.org/docs/push-ups.html#collaboration
+  - described <a href="http://www.riotfamily.org/docs/push-ups.html#collaboration">here</a>.
   -->
 
 <#function getSharedProperty key>
@@ -64,7 +75,10 @@
 
 <#---
   - Adds the contextPath and sessionId to the given URI if necessary.
-  - ${url('/foo.html')} => /context/foo.html;jsessionid=... 
+  - <h4>Example:</h4>
+  - <pre>${url('/foo.html')}
+  - ==> /context/foo.html;jsessionid=...
+  - </pre> 
   -->
 <#function url href>
 	<#return commonMacroHelper.resolveAndEncodeUrl(href?trim) />
@@ -72,7 +86,10 @@
 
 <#---
   - Adds the contextPath to the given path.
-  - ${url('/foo.html')} => /context/foo.html 
+  - <h4>Example:</h4>
+  - <pre>${url('/foo.html')}
+  - ==> /context/foo.html
+  - </pre> 
   -->
 <#function resolve href>
 	<#return commonMacroHelper.resolveUrl(href?trim) />
@@ -91,7 +108,10 @@
 
 <#---
   - Adds the contextPath and a timestamp to the given URI.
-  - ${resource('/style/main.css')} => /context/style/main.css?121345
+  - <h4>Example:</h4>
+  - <pre>${resource('/style/main.css')}
+  - ==> /context/style/main.css?121345
+  - </pre>
   -->
 <#function resource href>
 	<#return url(commonMacroHelper.addTimestamp(href)) />

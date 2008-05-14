@@ -1,0 +1,9 @@
+<ivy-module version="1.3">
+    <info organisation="riotfamily" module="fmdoc" revision="0.1" />
+    <configurations>
+    	<conf name="default" />
+    </configurations>
+    <dependencies>
+		<dependency org="freemarker" name="freemarker" rev="2.3.12" conf="default" />
+    </dependencies>
+</ivy-module>

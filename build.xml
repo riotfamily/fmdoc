@@ -1,0 +1,143 @@
+<project name="fmdoc" default="jar" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<!-- Location of the project's source and resource files -->
+	<property name="src.dir" value="src" />
+
+	<!-- Directory where libraries are stored that are not needed at runtime -->
+	<property name="lib.dir" value="lib" />
+
+	<!-- Directory where classes and artifacts are created -->
+	<property name="build.dir" value="build" />
+
+	<!-- Directory where the compile target will generate the class files -->
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+
+	<!-- Name of the jar file created by the jar target -->
+	<property name="jar.name" value="${ant.project.name}.jar" />
+
+	<property name="ivy.download" value="http://riotfamily.org/ivy/ivy-2.0.0-beta2.jar" />
+	<property name="ivy.jar.name" value="ivy2.jar" />
+	<property name="ivy.jar" value="${lib.dir}/${ivy.jar.name}" />
+
+	<taskdef resource="org/apache/ivy/ant/antlib.xml"
+			uri="antlib:org.apache.ivy.ant" classpath="${ivy.jar}"
+			onerror="ignore" />
+
+	<!--
+	  - The classpath. Includes all jar files in lib and WEB-INF/lib.
+	  -->
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="*.jar" />
+		<pathelement path="${java.class.path}" />
+	</path>
+
+	<!--
+	  - Resource files to be included in the jar. By default all files found
+	  - the source directory are included except for .java files and Ant's
+	  - default excludes.
+	 -->
+	<patternset id="jar.resource.patterns">
+		<exclude name="**/*.java" />
+	</patternset>
+
+	<!--
+	  - Creates output directories.
+	 -->
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${lib.dir}" />
+	</target>
+	
+	<!--
+	  - Cleans the output directories.
+	 -->
+	<target name="clean" description="Cleans the project">
+		<delete dir="${build.dir}" />
+		<delete dir="${lib.dir}">
+			<exclude name="${ivy.jar.name}" />
+		</delete>
+	</target>
+
+	<!--
+	  - Cleans everything.
+	 -->
+	<target name="distclean" description="Cleans everything" depends="clean">
+		<delete dir="${lib.dir}" />
+	</target>
+
+	<!--
+	  - Resolves the project's dependencies. Runtime dependencies are copied
+	  - to ${web.lib.dir} (webapp/WEB-INF/lib). Dependencies that are provided
+	  - by the container during runtime, but are required in order to compile
+	  - the project with Ant are copied to ${lib.dir}.
+	 -->
+	<target name="resolve" depends="init,-configure-ivy"
+			description="Resolves the project's dependencies">
+		<echo message="Retrieving module dependencies" />
+		<ivy:resolve showprogress="false" />
+		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" log="quiet" conf="default" />
+	</target>
+
+	<!--
+	  - Compiles the java sources to ${build.classes.dir}. Additionally all
+	  - files matched by the jar.resource.patterns patternset are copied.
+	 -->
+	<target name="compile" depends="resolve"
+			description="Compiles the project's Java sources">
+		<mkdir dir="${build.classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" deprecation="on" debug="on">
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.classes.dir}">
+			<fileset dir="${src.dir}">
+				<patternset refid="jar.resource.patterns" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!--
+	  - Creates a jar file containing all files in ${build.classes.dir}.
+	 -->
+	<target name="jar" depends="compile"
+			description="Creates a Jar file containing the files in /build/classes">
+		<jar jarfile="${build.dir}/${jar.name}">
+			<fileset dir="${build.classes.dir}" />
+		</jar>
+	</target>
+
+	<target name="-configure-ivy" depends="-install-ivy" unless="ivy.configured">
+		<available file="ivysettings-local.xml" property="ivysettings" value="ivysettings-local.xml" />
+		<property name="ivysettings" value="ivysettings.xml" />
+		<ivy:settings id="ivy.instance" file="${ivysettings}" override="true" />
+		<property name="ivy.configured" value="true" />
+	</target>
+
+	<!--
+	  - Installs Ivy (if needed).
+	 -->
+	<target name="-install-ivy" depends="-download-ivy" if="ivy.downloaded">
+		<taskdef resource="org/apache/ivy/ant/antlib.xml"
+			uri="antlib:org.apache.ivy.ant" classpath="${ivy.jar}"
+			onerror="ignore" />
+	</target>
+
+	<!--
+	  - Downloads the Ivy jar file from riotfamily.org.
+	 -->
+	<target name="-download-ivy" depends="-check-ivy" unless="ivy.available">
+		<echo>This project uses Ivy (http://ant.apache.org/ivy/) to manage dependencies.</echo>
+		<echo>Ivy was not found in the classpath the JAR file will now be downloaded ...</echo>
+		<delete dir="${lib.dir}" />
+		<mkdir dir="${lib.dir}" />
+		<get src="${ivy.download}" dest="${ivy.jar}" verbose="true" />
+		<property name="ivy.downloaded" value="true" />
+	</target>
+
+	<!--
+	  - Checks whether Ivy is present in the lib dir.
+	 -->
+	<target name="-check-ivy">
+		<available property="ivy.available" file="${ivy.jar}" />
+	</target>
+
+</project>
