@@ -55,6 +55,7 @@ public class DocGenerator {
 	
 	public DocGenerator(File destdir) {
 		this.destdir = destdir;
+		destdir.mkdirs();
 	}
 
 	public void generate(String name, Reader in, Logger log) {
@@ -112,7 +113,7 @@ public class DocGenerator {
 	}
 	
 	private InputStream getStream(String resource) {
-		return getClass().getResourceAsStream("../view/" + resource);
+		return getClass().getResourceAsStream("/org/riotfamily/fmdoc/view/" + resource);
 	}
 	
 	private void process(String viewName, Map model) throws TemplateException, IOException {

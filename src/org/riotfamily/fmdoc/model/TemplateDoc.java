@@ -97,6 +97,9 @@ public class TemplateDoc implements Comparable {
 	}
 	
 	public String getNamespace() {
+		if (comment == null) {
+			return null;
+		}
 		return comment.get("namespace");
 	}
 	
